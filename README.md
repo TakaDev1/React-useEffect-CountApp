@@ -49,17 +49,6 @@ useEffect(() => {
 
 [count] を依存配列に指定することで、count が変更されたときに副作用が実行されます。
 
-## ディレクトリ構成
-src/
-├── components/
-│   ├── HandleCounter.tsx
-│   ├── DisplayCounter.tsx
-│   └── HandleCounter.module.css
-│
-├── Problem2.tsx
-├── App.tsx
-└── index.css
-
 ## 起動方法
 npm install
 npm run dev
