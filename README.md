@@ -1,32 +1,67 @@
-# React + TypeScript + Vite
+# React-useEffect-CountApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Reactの `useEffect` を使って、状態変更に応じた副作用を学習するためのカウントアプリです。
 
-Currently, two official plugins are available:
+## 使用技術
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- CSS Modules
 
-## React Compiler
+## 学習内容
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `useState` による状態管理
+- `useEffect` による副作用処理
+- `useEffect` の依存配列
+- コンポーネント分割
+- CSS Modulesによるスタイリング
+- Git / GitHubを使った開発フロー
 
-## Expanding the Oxlint configuration
+## 機能
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- カウントの表示
+- カウントアップ
+- カウント更新時のコンソール出力
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```text
+カウント: 0
+[カウントアップ]
+
+↓ クリック
+
+カウント: 1
+[カウントアップ]
+
+Console:
+カウントが更新されました: 1
+
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## useEffect 
+
+カウントが変更されるたびに useEffect が実行されます。
+
+useEffect(() => {
+  console.log(`カウントが更新されました: ${count}`);
+}, [count]);
+
+[count] を依存配列に指定することで、count が変更されたときに副作用が実行されます。
+
+## ディレクトリ構成
+src/
+├── components/
+│   ├── HandleCounter.tsx
+│   ├── DisplayCounter.tsx
+│   └── HandleCounter.module.css
+│
+├── Problem2.tsx
+├── App.tsx
+└── index.css
+
+## 起動方法
+npm install
+npm run dev
+
+ブラウザで表示されたURLにアクセスしてください。
