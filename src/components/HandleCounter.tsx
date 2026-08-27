@@ -22,7 +22,7 @@ const HandleCounter = () => {
 
   return (
     <div>
-      <DisplayCounter />
+      <DisplayCounter count={count} />
       <button onClick={handleIncrement}>+</button>
       <button onClick={handleDecrement}>-</button>
       <button onClick={handleReset}>Reset</button>
