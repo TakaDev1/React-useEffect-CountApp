@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DisplayCounter from "./DisplayCounter";
+import styles from "./Button.module.css";
 
 const HandleCounter = () => {
   const [count, setCount] = useState<number>(0);
@@ -23,8 +24,12 @@ const HandleCounter = () => {
   return (
     <div>
       <DisplayCounter count={count} />
-      <button onClick={handleIncrement}>+</button>
-      <button onClick={handleDecrement}>-</button>
+      <button onClick={handleIncrement} className={styles.button}>
+        +
+      </button>
+      <button onClick={handleDecrement} className={styles.button}>
+        -
+      </button>
       <button onClick={handleReset}>Reset</button>
     </div>
   );
